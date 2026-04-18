@@ -158,3 +158,29 @@ Depois acessar: `http://localhost:18789`
 
 *Atualizado: Março 2026*
 *Dados sensíveis nunca neste arquivo — somente no .env e 1Password.*
+
+---
+
+## MCP PERMISSIONS
+
+Permitido sem perguntar:
+
+- read only tools
+- supabase read
+- memory search
+- calendar read
+- logs
+
+Exige confirmação:
+
+- writes
+- automações
+- inserts
+- tarefas
+
+Proibido sem aprovação:
+
+- delete
+- produção crítica
+- credenciais
+- mensagens externas
