@@ -1,0 +1,270 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Length 2085 >>
+stream
+BT
+/F1 11 Tf
+50 790 Td
+14 TL
+(RESUMO EM PORTUGUÊS ? FERRAMENTAS/CONCEITOS DO CARROSSEL) Tj
+T*
+(Baseado nas 4 imagens enviadas em 25/04/2026.) Tj
+T*
+() Tj
+T*
+(INTRODUÇÃO) Tj
+T*
+(Esse material mostra quatro recursos comuns em ambientes de agentes de IA para desenvolvimento.) Tj
+T*
+(Em resumo: são formas de organizar agentes, conectar ferramentas externas,) Tj
+T*
+(acompanhar o que está acontecendo e automatizar tarefas repetitivas.) Tj
+T*
+() Tj
+T*
+(1\) SPECIALIZED AGENTS \(AGENTES ESPECIALIZADOS\)) Tj
+T*
+(O que é:) Tj
+T*
+(Agentes com funções específicas dentro de um projeto. Em vez de um único agente fazer tudo,) Tj
+T*
+(cada um cuida de uma área.) Tj
+T*
+() Tj
+T*
+(Para que serve:) Tj
+T*
+(- Separar responsabilidades por especialidade) Tj
+T*
+(- Melhorar a qualidade técnica em cada etapa) Tj
+T*
+(- Reduzir bagunça quando o projeto cresce) Tj
+T*
+() Tj
+T*
+(Exemplos:) Tj
+T*
+(- Um agente para frontend \(telas\)) Tj
+T*
+(- Outro para backend \(regras de negócio e API\)) Tj
+T*
+(- Outro para testes) Tj
+T*
+(- Outro para documentação ou marketing) Tj
+T*
+() Tj
+T*
+(Como usar na prática:) Tj
+T*
+(Defina claramente o papel de cada agente, o escopo, entradas e saídas esperadas.) Tj
+T*
+(Depois, um agente principal orquestra tudo.) Tj
+T*
+() Tj
+T*
+(2\) MCP INTEGRATIONS \(INTEGRAÇÕES MCP\)) Tj
+T*
+(O que é:) Tj
+T*
+(Uma forma de conectar o agente a ferramentas e fontes externas, como documentos,) Tj
+T*
+(bancos de dados, APIs, sistemas internos e plataformas de produtividade.) Tj
+T*
+() Tj
+T*
+(Para que serve:) Tj
+T*
+(- Dar acesso do agente a dados reais do trabalho) Tj
+T*
+(- Permitir leitura e, quando autorizado, ações em sistemas externos) Tj
+T*
+(- Transformar o agente de ?só conversa? em ?agente que consulta e executa?) Tj
+T*
+() Tj
+T*
+(Como usar na prática:) Tj
+T*
+(Integrar o ambiente do agente com as ferramentas certas: GitHub, banco de dados,) Tj
+T*
+(CRM, arquivos, documentação e APIs internas.) Tj
+T*
+() Tj
+T*
+(Cuidado importante:) Tj
+T*
+(Controle bem permissões. O ideal é liberar só o necessário.) Tj
+T*
+() Tj
+T*
+(3\) REAL-TIME MONITORING \(MONITORAMENTO EM TEMPO REAL\)) Tj
+ET
+endstream
+endobj
+3 0 obj
+<< /Length 1853 >>
+stream
+BT
+/F1 11 Tf
+50 790 Td
+14 TL
+(O que é:) Tj
+T*
+(Um painel que mostra o que os agentes estão fazendo enquanto trabalham.) Tj
+T*
+() Tj
+T*
+(Para que serve:) Tj
+T*
+(- Acompanhar progresso das tarefas) Tj
+T*
+(- Ver gargalos, erros e lentidão) Tj
+T*
+(- Entender uso de ferramentas e performance) Tj
+T*
+(- Dar transparência para o time) Tj
+T*
+() Tj
+T*
+(Como usar na prática:) Tj
+T*
+(Acompanhar logs, etapas em execução, tempo por tarefa, falhas e métricas.) Tj
+T*
+() Tj
+T*
+(Valor real:) Tj
+T*
+(Ajuda a não ficar no escuro. Você vê se o agente está parado,) Tj
+T*
+(repetindo erro ou realmente avançando.) Tj
+T*
+() Tj
+T*
+(4\) AUTOMATION SCHEDULING \(AGENDAMENTO DE AUTOMAÇÃO\)) Tj
+T*
+(O que é:) Tj
+T*
+(Programação de tarefas automáticas para rodarem sozinhas em horários ou intervalos definidos.) Tj
+T*
+() Tj
+T*
+(Para que serve:) Tj
+T*
+(- Gerar relatórios automaticamente) Tj
+T*
+(- Atualizar bases de dados) Tj
+T*
+(- Executar rotinas recorrentes sem intervenção manual) Tj
+T*
+(- Manter processos operando com consistência) Tj
+T*
+() Tj
+T*
+(Como usar na prática:) Tj
+T*
+(Configurar tarefas diárias, semanais ou por evento.) Tj
+T*
+(Exemplos: resumo diário de leads, verificação de sistema, envio de alertas,) Tj
+T*
+(backup, limpeza e sincronização.) Tj
+T*
+() Tj
+T*
+(Valor real:) Tj
+T*
+(Economiza tempo, reduz esquecimento e melhora produtividade.) Tj
+T*
+() Tj
+T*
+(COMO AS 4 COISAS TRABALHAM JUNTAS) Tj
+T*
+(- Agentes especializados dividem o trabalho) Tj
+T*
+(- Integrações MCP dão acesso às ferramentas e dados) Tj
+T*
+(- Monitoramento em tempo real mostra o que está acontecendo) Tj
+T*
+(- Agendamento automatiza o que é repetitivo) Tj
+T*
+() Tj
+T*
+(EXEMPLO PRÁTICO NO CONTEXTO DA LOOP) Tj
+T*
+(Você pode ter:) Tj
+T*
+(- um agente para atendimento/comercial) Tj
+T*
+(- um para automações N8N) Tj
+T*
+(- um para CRM/Supabase) Tj
+T*
+(- um para documentação e propostas) Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Length 597 >>
+stream
+BT
+/F1 11 Tf
+50 790 Td
+14 TL
+(Todos conectados às ferramentas certas, com painel de monitoramento) Tj
+T*
+(e tarefas agendadas para rodar sozinhas.) Tj
+T*
+() Tj
+T*
+(RESUMO EXECUTIVO) Tj
+T*
+(Essas ferramentas servem para transformar IA em operação:) Tj
+T*
+(dividir trabalho, conectar dados, acompanhar execução e automatizar rotina.) Tj
+T*
+(Sozinhas são úteis; juntas, viram uma máquina mais profissional.) Tj
+T*
+() Tj
+T*
+(OBSERVAÇÃO) Tj
+T*
+(O texto foi montado a partir do conteúdo visível nas imagens.) Tj
+T*
+(Alguns detalhes finos do carrossel original podem não estar legíveis na captura.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Pages /Count 3 /Kids [ 6 0 R 7 0 R 8 0 R ] >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 5 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 2 0 R >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 5 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 3 0 R >>
+endobj
+8 0 obj
+<< /Type /Page /Parent 5 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 4 0 R >>
+endobj
+9 0 obj
+<< /Type /Catalog /Pages 5 0 R >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000085 00000 n 
+0000002222 00000 n 
+0000004127 00000 n 
+0000004775 00000 n 
+0000004846 00000 n 
+0000004972 00000 n 
+0000005098 00000 n 
+0000005224 00000 n 
+trailer
+<< /Size 10 /Root 9 0 R >>
+startxref
+5273
+%%EOF
