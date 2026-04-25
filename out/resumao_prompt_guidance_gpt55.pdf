@@ -1,0 +1,370 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 4 /Kids [ 7 0 R 8 0 R 9 0 R 10 0 R ] >>
+endobj
+3 0 obj
+<< /Length 2210 >>
+stream
+BT
+/F1 11 Tf
+50 790 Td
+14 TL
+(RESUMÃO EM PORTUGUÊS ? GUIA DE PROMPTS DO GPT-5.5 \(OPENAI\)) Tj
+T*
+(Fonte: https://developers.openai.com/api/docs/guides/prompt-guidance?model=gpt-5.5) Tj
+T*
+(Data do resumo: 25/04/2026) Tj
+T*
+() Tj
+T*
+(VISÃO GERAL) Tj
+T*
+(A ideia central do guia é simples: o GPT-5.5 funciona melhor quando você descreve bem o) Tj
+T*
+(resultado que quer, os critérios de sucesso, as restrições e o contexto disponível ? sem) Tj
+T*
+(engessar demais o caminho.) Tj
+T*
+() Tj
+T*
+(Em português claro:) Tj
+T*
+(- Diga onde quer chegar) Tj
+T*
+(- Diga o que é obrigatório) Tj
+T*
+(- Diga o que não pode acontecer) Tj
+T*
+(- Diga qual formato de saída você espera) Tj
+T*
+(- E deixe o modelo escolher a melhor rota) Tj
+T*
+() Tj
+T*
+(O erro mais comum é carregar prompts antigos cheios de regras excessivas, passos duros e) Tj
+T*
+(instruções do tipo ?sempre faça isso?, ?nunca faça aquilo?, ?primeiro A, depois B, depois C?.) Tj
+T*
+(Segundo o guia, isso pode piorar o resultado no GPT-5.5, porque adiciona ruído e deixa a) Tj
+T*
+(resposta mecânica.) Tj
+T*
+() Tj
+T*
+(1\) O GPT-5.5 PEDE PROMPTS MAIS ENXUTOS E ORIENTADOS A RESULTADO) Tj
+T*
+(Em vez de explicar cada microetapa, você deve explicar:) Tj
+T*
+(- qual é o objetivo) Tj
+T*
+(- como saber se deu certo) Tj
+T*
+(- quais restrições importam) Tj
+T*
+(- quais evidências existem) Tj
+T*
+(- como a resposta final deve vir) Tj
+T*
+() Tj
+T*
+(Ou seja: menos roteiro engessado, mais definição de destino.) Tj
+T*
+() Tj
+T*
+(2\) EVITE HERDAR PROMPTS ANTIGOS CHEIOS DE GORDURA) Tj
+T*
+(Prompts antigos costumam ser muito prescritivos porque modelos anteriores precisavam disso. No) Tj
+T*
+(GPT-5.5, excesso de instrução pode:) Tj
+T*
+(- adicionar barulho) Tj
+T*
+(- limitar a capacidade do modelo de encontrar um caminho melhor) Tj
+T*
+(- deixar a resposta travada, artificial ou burocrática) Tj
+T*
+() Tj
+T*
+(Resumo prático: se você tinha um prompt gigante, não copie tudo automaticamente. Limpe o que) Tj
+T*
+(não muda comportamento de verdade.) Tj
+T*
+() Tj
+T*
+(3\) PERSONALIDADE E ESTILO DE COLABORAÇÃO DEVEM SER CURTOS) Tj
+T*
+(O guia separa duas coisas:) Tj
+T*
+(A\) Personalidade = como o assistente soa.) Tj
+T*
+(B\) Estilo de colaboração = como ele trabalha.) Tj
+T*
+() Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Length 2449 >>
+stream
+BT
+/F1 11 Tf
+50 790 Td
+14 TL
+(Essas instruções devem ser curtas. Elas servem para moldar a experiência, não para substituir) Tj
+T*
+(meta, critério de sucesso, regras de ferramenta ou limites.) Tj
+T*
+() Tj
+T*
+(4\) O MODELO JÁ TENDE A SER MAIS DIRETO E EFICIENTE) Tj
+T*
+(O GPT-5.5 já vem naturalmente mais direto, objetivo, orientado à tarefa e menos enrolado. Isso) Tj
+T*
+(é ótimo para produção. Mas, em produtos conversacionais, talvez você precise dizer) Tj
+T*
+(explicitamente o tom desejado.) Tj
+T*
+() Tj
+T*
+(5\) EM TAREFAS LONGAS, PEÇA UMA PRÉVIA VISÍVEL ANTES DAS AÇÕES) Tj
+T*
+(Em tarefas com múltiplos passos ou uso de ferramentas, peça uma pequena atualização visível) Tj
+T*
+(antes da execução. Isso melhora a sensação de velocidade e transparência.) Tj
+T*
+() Tj
+T*
+(6\) USE REGRAS ABSOLUTAS SÓ QUANDO FOREM REALMENTE ABSOLUTAS) Tj
+T*
+(Evite usar SEMPRE, NUNCA, OBRIGATORIAMENTE, APENAS, a menos que sejam invariantes reais.) Tj
+T*
+(Use isso só para regras de segurança, campos obrigatórios, ações proibidas e limites) Tj
+T*
+(inegociáveis.) Tj
+T*
+(Para o resto, prefira regras de decisão.) Tj
+T*
+() Tj
+T*
+(7\) DEFINA CONDIÇÕES DE PARADA) Tj
+T*
+(Diga quando o modelo pode parar de buscar, pesquisar, iterar ou usar ferramentas.) Tj
+T*
+(Em português simples: se já tem evidência suficiente para responder bem, responda e encerre.) Tj
+T*
+() Tj
+T*
+(8\) DEFINA O QUE FAZER QUANDO FALTAR EVIDÊNCIA) Tj
+T*
+(O modelo deve usar a menor quantidade de evidência suficiente para responder corretamente. Se) Tj
+T*
+(faltar dado essencial, deve pedir só o mínimo faltante.) Tj
+T*
+() Tj
+T*
+(9\) CONTROLE FORMATO E VERBOSIDADE COM INTENÇÃO) Tj
+T*
+(Vale definir:) Tj
+T*
+(- tamanho esperado) Tj
+T*
+(- estrutura desejada) Tj
+T*
+(- público-alvo) Tj
+T*
+(- tom) Tj
+T*
+(- nível de detalhamento) Tj
+T*
+() Tj
+T*
+(Quanto melhor você delimita o tipo de entrega, melhor tende a sair.) Tj
+T*
+() Tj
+T*
+(10\) FORMATAÇÃO DEVE AJUDAR, NÃO ATRAPALHAR) Tj
+T*
+(Parágrafo limpo costuma ser o padrão ideal. Use títulos, bullets e listas quando isso) Tj
+T*
+(realmente melhorar a leitura.) Tj
+T*
+() Tj
+T*
+(11\) EM REESCRITA, DIGA O QUE DEVE SER PRESERVADO) Tj
+T*
+(Se você quer melhorar um texto sem mudar sua essência, diga explicitamente o que preservar) Tj
+T*
+(antes de pedir melhoria.) Tj
+T*
+() Tj
+T*
+(12\) EM RESPOSTAS BASEADAS EM FONTES, CITAÇÃO TEM QUE ESTAR NO PROMPT) Tj
+T*
+(Se a tarefa é factual, diga o que precisa de suporte, o que conta como evidência suficiente, o) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Length 2246 >>
+stream
+BT
+/F1 11 Tf
+50 790 Td
+14 TL
+(que fazer quando faltar evidência e como citar.) Tj
+T*
+() Tj
+T*
+(13\) USE ?ORÇAMENTO DE RECUPERAÇÃO? \(RETRIEVAL BUDGET\)) Tj
+T*
+(Diga quando a busca já é suficiente. Não fique fazendo busca atrás de busca para perfumar) Tj
+T*
+(resposta. Busque o suficiente para responder bem.) Tj
+T*
+() Tj
+T*
+(14\) EM CONTEÚDO CRIATIVO, SEPARE FATOS DE CRIATIVIDADE) Tj
+T*
+(Nunca invente métricas, nomes de clientes, roadmap, capacidades do produto ou resultados de) Tj
+T*
+(negócio para deixar o texto mais bonito. Se não tiver suporte, use placeholders ou assunções) Tj
+T*
+(marcadas.) Tj
+T*
+() Tj
+T*
+(15\) DÊ FERRAMENTAS PARA O MODELO VALIDAR O QUE FEZ) Tj
+T*
+(Para tarefas técnicas, dê acesso a validação real: testes, lint, typecheck, build, smoke test.) Tj
+T*
+(Não basta gerar. Tem que conferir.) Tj
+T*
+() Tj
+T*
+(16\) PARA ARTEFATOS VISUAIS, MANDE RENDERIZAR E INSPECIONAR) Tj
+T*
+(Se estiver criando interface ou layout, precisa renderizar, inspecionar e revisar até bater) Tj
+T*
+(com os requisitos.) Tj
+T*
+() Tj
+T*
+(17\) PARA PLANOS DE IMPLEMENTAÇÃO, PEÇA RASTREABILIDADE) Tj
+T*
+(Peça requisitos, onde cada um é atendido, APIs/sistemas envolvidos, fluxo de dados,) Tj
+T*
+(validações, falhas, segurança e perguntas em aberto.) Tj
+T*
+() Tj
+T*
+(18\) EM WORKFLOWS LONGOS, PRESERVE AS FASES DA RESPOSTA) Tj
+T*
+(Updates intermediários devem continuar sendo updates intermediários, e a resposta final deve) Tj
+T*
+(continuar marcada como final.) Tj
+T*
+() Tj
+T*
+(19\) ESTRUTURA SUGERIDA DE UM BOM PROMPT COMPLEXO) Tj
+T*
+(- Role) Tj
+T*
+(- Personality) Tj
+T*
+(- Goal) Tj
+T*
+(- Success criteria) Tj
+T*
+(- Constraints) Tj
+T*
+(- Output) Tj
+T*
+(- Stop rules) Tj
+T*
+() Tj
+T*
+(RESUMO EXECUTIVO ? O QUE MUDAR NA PRÁTICA) Tj
+T*
+(1. Corte instruções antigas que só repetem controle sem necessidade) Tj
+T*
+(2. Escreva mais em termos de objetivo e sucesso do que de passo a passo) Tj
+T*
+(3. Defina tom e estilo de colaboração em blocos curtos) Tj
+T*
+(4. Use absolutos só para regras realmente absolutas) Tj
+T*
+(5. Defina quando o modelo pode parar) Tj
+T*
+(6. Diga o que fazer se faltar evidência) Tj
+T*
+(7. Controle formato, tamanho e público-alvo) Tj
+T*
+(8. Separe fatos de criatividade) Tj
+T*
+(9. Exija validação quando houver como validar) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Length 477 >>
+stream
+BT
+/F1 11 Tf
+50 790 Td
+14 TL
+(10. Em tarefas longas, peça uma atualização curta antes da execução) Tj
+T*
+() Tj
+T*
+(MINHA LEITURA PRÁTICA DISSO) Tj
+T*
+(GPT-5.5 é melhor quando você trata ele mais como um profissional competente com objetivo) Tj
+T*
+(claro, e menos como um estagiário que precisa de um script detalhado para respirar.) Tj
+T*
+() Tj
+T*
+(FRASE-CHAVE PARA GUARDAR) Tj
+T*
+(?Defina o destino, os limites e a régua de sucesso. Não engesse a rota sem necessidade.?) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 3 0 R >>
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 4 0 R >>
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 5 0 R >>
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 6 0 R >>
+endobj
+11 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000015 00000 n 
+0000000085 00000 n 
+0000000163 00000 n 
+0000002425 00000 n 
+0000004926 00000 n 
+0000007224 00000 n 
+0000007752 00000 n 
+0000007878 00000 n 
+0000008004 00000 n 
+0000008130 00000 n 
+0000008257 00000 n 
+trailer
+<< /Size 12 /Root 11 0 R >>
+startxref
+8307
+%%EOF

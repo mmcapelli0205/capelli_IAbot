@@ -1,0 +1,122 @@
+RESUMÃO EM PORTUGUÊS — GUIA DE PROMPTS DO GPT-5.5 (OPENAI)
+Fonte: https://developers.openai.com/api/docs/guides/prompt-guidance?model=gpt-5.5
+Data do resumo: 25/04/2026
+
+VISÃO GERAL
+A ideia central do guia é simples: o GPT-5.5 funciona melhor quando você descreve bem o resultado que quer, os critérios de sucesso, as restrições e o contexto disponível — sem engessar demais o caminho.
+
+Em português claro:
+- Diga onde quer chegar
+- Diga o que é obrigatório
+- Diga o que não pode acontecer
+- Diga qual formato de saída você espera
+- E deixe o modelo escolher a melhor rota
+
+O erro mais comum é carregar prompts antigos cheios de regras excessivas, passos duros e instruções do tipo “sempre faça isso”, “nunca faça aquilo”, “primeiro A, depois B, depois C”. Segundo o guia, isso pode piorar o resultado no GPT-5.5, porque adiciona ruído e deixa a resposta mecânica.
+
+1) O GPT-5.5 PEDE PROMPTS MAIS ENXUTOS E ORIENTADOS A RESULTADO
+Em vez de explicar cada microetapa, você deve explicar:
+- qual é o objetivo
+- como saber se deu certo
+- quais restrições importam
+- quais evidências existem
+- como a resposta final deve vir
+
+Ou seja: menos roteiro engessado, mais definição de destino.
+
+2) EVITE HERDAR PROMPTS ANTIGOS CHEIOS DE GORDURA
+Prompts antigos costumam ser muito prescritivos porque modelos anteriores precisavam disso. No GPT-5.5, excesso de instrução pode:
+- adicionar barulho
+- limitar a capacidade do modelo de encontrar um caminho melhor
+- deixar a resposta travada, artificial ou burocrática
+
+Resumo prático: se você tinha um prompt gigante, não copie tudo automaticamente. Limpe o que não muda comportamento de verdade.
+
+3) PERSONALIDADE E ESTILO DE COLABORAÇÃO DEVEM SER CURTOS
+O guia separa duas coisas:
+A) Personalidade = como o assistente soa.
+B) Estilo de colaboração = como ele trabalha.
+
+Essas instruções devem ser curtas. Elas servem para moldar a experiência, não para substituir meta, critério de sucesso, regras de ferramenta ou limites.
+
+4) O MODELO JÁ TENDE A SER MAIS DIRETO E EFICIENTE
+O GPT-5.5 já vem naturalmente mais direto, objetivo, orientado à tarefa e menos enrolado. Isso é ótimo para produção. Mas, em produtos conversacionais, talvez você precise dizer explicitamente o tom desejado.
+
+5) EM TAREFAS LONGAS, PEÇA UMA PRÉVIA VISÍVEL ANTES DAS AÇÕES
+Em tarefas com múltiplos passos ou uso de ferramentas, peça uma pequena atualização visível antes da execução. Isso melhora a sensação de velocidade e transparência.
+
+6) USE REGRAS ABSOLUTAS SÓ QUANDO FOREM REALMENTE ABSOLUTAS
+Evite usar SEMPRE, NUNCA, OBRIGATORIAMENTE, APENAS, a menos que sejam invariantes reais.
+Use isso só para regras de segurança, campos obrigatórios, ações proibidas e limites inegociáveis.
+Para o resto, prefira regras de decisão.
+
+7) DEFINA CONDIÇÕES DE PARADA
+Diga quando o modelo pode parar de buscar, pesquisar, iterar ou usar ferramentas.
+Em português simples: se já tem evidência suficiente para responder bem, responda e encerre.
+
+8) DEFINA O QUE FAZER QUANDO FALTAR EVIDÊNCIA
+O modelo deve usar a menor quantidade de evidência suficiente para responder corretamente. Se faltar dado essencial, deve pedir só o mínimo faltante.
+
+9) CONTROLE FORMATO E VERBOSIDADE COM INTENÇÃO
+Vale definir:
+- tamanho esperado
+- estrutura desejada
+- público-alvo
+- tom
+- nível de detalhamento
+
+Quanto melhor você delimita o tipo de entrega, melhor tende a sair.
+
+10) FORMATAÇÃO DEVE AJUDAR, NÃO ATRAPALHAR
+Parágrafo limpo costuma ser o padrão ideal. Use títulos, bullets e listas quando isso realmente melhorar a leitura.
+
+11) EM REESCRITA, DIGA O QUE DEVE SER PRESERVADO
+Se você quer melhorar um texto sem mudar sua essência, diga explicitamente o que preservar antes de pedir melhoria.
+
+12) EM RESPOSTAS BASEADAS EM FONTES, CITAÇÃO TEM QUE ESTAR NO PROMPT
+Se a tarefa é factual, diga o que precisa de suporte, o que conta como evidência suficiente, o que fazer quando faltar evidência e como citar.
+
+13) USE “ORÇAMENTO DE RECUPERAÇÃO” (RETRIEVAL BUDGET)
+Diga quando a busca já é suficiente. Não fique fazendo busca atrás de busca para perfumar resposta. Busque o suficiente para responder bem.
+
+14) EM CONTEÚDO CRIATIVO, SEPARE FATOS DE CRIATIVIDADE
+Nunca invente métricas, nomes de clientes, roadmap, capacidades do produto ou resultados de negócio para deixar o texto mais bonito. Se não tiver suporte, use placeholders ou assunções marcadas.
+
+15) DÊ FERRAMENTAS PARA O MODELO VALIDAR O QUE FEZ
+Para tarefas técnicas, dê acesso a validação real: testes, lint, typecheck, build, smoke test. Não basta gerar. Tem que conferir.
+
+16) PARA ARTEFATOS VISUAIS, MANDE RENDERIZAR E INSPECIONAR
+Se estiver criando interface ou layout, precisa renderizar, inspecionar e revisar até bater com os requisitos.
+
+17) PARA PLANOS DE IMPLEMENTAÇÃO, PEÇA RASTREABILIDADE
+Peça requisitos, onde cada um é atendido, APIs/sistemas envolvidos, fluxo de dados, validações, falhas, segurança e perguntas em aberto.
+
+18) EM WORKFLOWS LONGOS, PRESERVE AS FASES DA RESPOSTA
+Updates intermediários devem continuar sendo updates intermediários, e a resposta final deve continuar marcada como final.
+
+19) ESTRUTURA SUGERIDA DE UM BOM PROMPT COMPLEXO
+- Role
+- Personality
+- Goal
+- Success criteria
+- Constraints
+- Output
+- Stop rules
+
+RESUMO EXECUTIVO — O QUE MUDAR NA PRÁTICA
+1. Corte instruções antigas que só repetem controle sem necessidade
+2. Escreva mais em termos de objetivo e sucesso do que de passo a passo
+3. Defina tom e estilo de colaboração em blocos curtos
+4. Use absolutos só para regras realmente absolutas
+5. Defina quando o modelo pode parar
+6. Diga o que fazer se faltar evidência
+7. Controle formato, tamanho e público-alvo
+8. Separe fatos de criatividade
+9. Exija validação quando houver como validar
+10. Em tarefas longas, peça uma atualização curta antes da execução
+
+MINHA LEITURA PRÁTICA DISSO
+GPT-5.5 é melhor quando você trata ele mais como um profissional competente com objetivo claro, e menos como um estagiário que precisa de um script detalhado para respirar.
+
+FRASE-CHAVE PARA GUARDAR
+“Defina o destino, os limites e a régua de sucesso. Não engesse a rota sem necessidade.”
