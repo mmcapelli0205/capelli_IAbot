@@ -1,0 +1,300 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 3 /Kids [ 6 0 R 7 0 R 8 0 R ] >>
+endobj
+3 0 obj
+<< /Length 2312 >>
+stream
+BT
+/F1 11 Tf
+50 790 Td
+14 TL
+(# Repositórios e Skills listados no Vault) Tj
+T*
+() Tj
+T*
+(Lista montada a partir do que ficou registrado hoje no Brain/Vault pelos carrosséis e resumos) Tj
+T*
+(salvos.) Tj
+T*
+() Tj
+T*
+(> Linguagem simples, sem enrolação.) Tj
+T*
+() Tj
+T*
+(## Repositórios / Skills) Tj
+T*
+() Tj
+T*
+(### 1. MCP Server) Tj
+T*
+(- **Link:** https://github.com/modelcontextprotocol/servers) Tj
+T*
+(- **Como instalar/usar:** veja os READMEs de cada servidor dentro do repositório) Tj
+T*
+(- **O que faz:** conecta a IA com ferramentas e dados de fora, tipo arquivos, banco, planilha) Tj
+T*
+(e serviços externos.) Tj
+T*
+() Tj
+T*
+(### 2. Marketing Skills) Tj
+T*
+(- **Link:**) Tj
+T*
+(https://github.com/The-Pocket/Tutorial-Codebase-Knowledge/tree/main/Marketing%20Skills) Tj
+T*
+(- **Como instalar/usar:** baixar/clonar o repositório e seguir o README da pasta) Tj
+T*
+(- **O que faz:** ajuda a IA a escrever melhor pra vender, fazer conteúdo, melhorar páginas e) Tj
+T*
+(pensar em marketing.) Tj
+T*
+() Tj
+T*
+(### 3. Brand Guideline) Tj
+T*
+(- **Link:** https://github.com/Ejb503/claude-code-subagent-collection/tree/main/brand-guideline) Tj
+T*
+(- **Como instalar/usar:** clonar o repositório e usar a skill/pasta conforme o README) Tj
+T*
+(- **O que faz:** mantém a identidade visual e o jeito da marca consistentes.) Tj
+T*
+() Tj
+T*
+(### 4. Claude SEO) Tj
+T*
+(- **Link:** https://github.com/AdemAkdag/claude-seo) Tj
+T*
+(- **Como instalar/usar:** seguir o README do repositório) Tj
+T*
+(- **O que faz:** ajuda a criar páginas e textos pensando em aparecer melhor no Google.) Tj
+T*
+() Tj
+T*
+(### 5. Optimization / Context Engineering) Tj
+T*
+(- **Link:** https://github.com/Veraticus/awesome-claude-code-subagents) Tj
+T*
+(- **Como instalar/usar:** clonar o repositório e escolher os subagents/skills que fizerem) Tj
+T*
+(sentido) Tj
+T*
+(- **O que faz:** organiza melhor o contexto da IA pra ela errar menos e trabalhar de forma) Tj
+T*
+(mais eficiente.) Tj
+T*
+() Tj
+T*
+(### 6. Skill Creator) Tj
+T*
+(- **Link:**) Tj
+T*
+(https://github.com/hesreallyhim/awesome-claude-code/tree/master/prompts/skill-creator) Tj
+T*
+(- **Como instalar/usar:** usar o prompt/skill do repositório como base) Tj
+T*
+(- **O que faz:** cria novas skills pra transformar tarefas repetidas em processo pronto.) Tj
+T*
+() Tj
+T*
+(### 7. Remotion) Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Length 2150 >>
+stream
+BT
+/F1 11 Tf
+50 790 Td
+14 TL
+(- **Link:** https://github.com/remotion-dev/remotion) Tj
+T*
+(- **Como instalar/usar:** seguir a documentação oficial do projeto) Tj
+T*
+(- **O que faz:** cria vídeos por código. Útil pra conteúdo, anúncios e vídeos automáticos.) Tj
+T*
+() Tj
+T*
+(### 8. File Search) Tj
+T*
+(- **Link:** https://github.com/ayanami2003/file-search-mcp) Tj
+T*
+(- **Como instalar/usar:** seguir o README do repositório) Tj
+T*
+(- **O que faz:** deixa a IA achar arquivos, trechos de código e partes importantes mais rápido.) Tj
+T*
+() Tj
+T*
+(### 9. NotebookLM) Tj
+T*
+(- **Link:** https://notebooklm.google/) Tj
+T*
+(- **Como instalar/usar:** usar via web) Tj
+T*
+(- **O que faz:** organiza conteúdo, resume material e ajuda a estudar ou juntar referência.) Tj
+T*
+() Tj
+T*
+(### 10. Web Artifacts) Tj
+T*
+(- **Link:** https://github.com/dwyle/claude-code-web-artifacts-mcp) Tj
+T*
+(- **Como instalar/usar:** seguir o README do repositório) Tj
+T*
+(- **O que faz:** ajuda a IA a montar interface web, páginas, blocos visuais e protótipos mais) Tj
+T*
+(rápido.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## Outros itens salvos hoje no Vault) Tj
+T*
+() Tj
+T*
+(### GPT-5.5 Prompt Guidance \(OpenAI\)) Tj
+T*
+(- **Link:** https://developers.openai.com/api/docs/guides/prompt-guidance?model=gpt-5.5) Tj
+T*
+(- **Como usar:** leitura direta da documentação) Tj
+T*
+(- **O que faz:** ensina como escrever prompts melhores pro GPT-5.5, com menos trava e mais) Tj
+T*
+(foco no resultado.) Tj
+T*
+() Tj
+T*
+(### Specialized Agents) Tj
+T*
+(- **Link:** sem link específico salvo no Vault) Tj
+T*
+(- **Como usar:** conceito) Tj
+T*
+(- **O que faz:** divide o trabalho entre vários agentes, cada um cuidando de uma parte.) Tj
+T*
+() Tj
+T*
+(### MCP Integrations) Tj
+T*
+(- **Link:** sem link específico salvo no Vault) Tj
+T*
+(- **Como usar:** conceito) Tj
+T*
+(- **O que faz:** conecta o agente com ferramentas e dados externos.) Tj
+T*
+() Tj
+T*
+(### Real-Time Monitoring) Tj
+T*
+(- **Link:** sem link específico salvo no Vault) Tj
+T*
+(- **Como usar:** conceito) Tj
+T*
+(- **O que faz:** mostra o que os agentes estão fazendo em tempo real.) Tj
+T*
+() Tj
+T*
+(### Automation Scheduling) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Length 699 >>
+stream
+BT
+/F1 11 Tf
+50 790 Td
+14 TL
+(- **Link:** sem link específico salvo no Vault) Tj
+T*
+(- **Como usar:** conceito) Tj
+T*
+(- **O que faz:** agenda tarefas automáticas pra rodar sozinhas.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## Os mais úteis pra você hoje) Tj
+T*
+() Tj
+T*
+(### Pra SaaS) Tj
+T*
+(- Web Artifacts) Tj
+T*
+(- Skill Creator) Tj
+T*
+(- Optimization / Context Engineering) Tj
+T*
+(- File Search) Tj
+T*
+(- MCP Server) Tj
+T*
+() Tj
+T*
+(### Pra website) Tj
+T*
+(- Web Artifacts) Tj
+T*
+(- Claude SEO) Tj
+T*
+(- Brand Guideline) Tj
+T*
+(- Marketing Skills) Tj
+T*
+() Tj
+T*
+(### Pra app) Tj
+T*
+(- Web Artifacts) Tj
+T*
+(- Optimization / Context Engineering) Tj
+T*
+(- Skill Creator) Tj
+T*
+(- File Search) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 3 0 R >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 4 0 R >>
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 5 0 R >>
+endobj
+9 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000085 00000 n 
+0000000156 00000 n 
+0000002520 00000 n 
+0000004722 00000 n 
+0000005472 00000 n 
+0000005598 00000 n 
+0000005724 00000 n 
+0000005850 00000 n 
+trailer
+<< /Size 10 /Root 9 0 R >>
+startxref
+5899
+%%EOF
