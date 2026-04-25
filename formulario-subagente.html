@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Briefing de Sub-Agente</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827cc;
+      --card: #1f2937;
+      --soft: #334155;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #22c55e;
+      --accent-2: #38bdf8;
+      --danger: #f59e0b;
+      --radius: 18px;
+      --shadow: 0 20px 50px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #020617 0%, #0f172a 45%, #111827 100%);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 32px 16px 60px;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(34,197,94,.18), rgba(56,189,248,.14));
+      border: 1px solid rgba(148,163,184,.18);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 760px;
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(17, 24, 39, 0.92);
+      border: 1px solid rgba(148,163,184,.14);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      margin: 0 0 6px;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .full { grid-column: 1 / -1; }
+
+    label {
+      display: block;
+      font-size: .95rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #f8fafc;
+    }
+
+    .hint {
+      display: block;
+      color: var(--muted);
+      font-weight: 400;
+      font-size: .85rem;
+      margin-top: 4px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      border: 1px solid rgba(148,163,184,.18);
+      background: rgba(15,23,42,.9);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 14px 14px;
+      font: inherit;
+      outline: none;
+      transition: .2s ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--accent-2);
+      box-shadow: 0 0 0 4px rgba(56,189,248,.12);
+      transform: translateY(-1px);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .primary {
+      background: linear-gradient(135deg, var(--accent), #16a34a);
+      color: #052e16;
+    }
+
+    .secondary {
+      background: #0f172a;
+      color: var(--text);
+      border: 1px solid rgba(148,163,184,.18);
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+    }
+
+    .output {
+      margin-top: 10px;
+      white-space: pre-wrap;
+      background: #020617;
+      border: 1px solid rgba(148,163,184,.12);
+      border-radius: 16px;
+      padding: 18px;
+      min-height: 220px;
+      color: #dbeafe;
+      line-height: 1.55;
+    }
+
+    .pillbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .pill {
+      background: rgba(56,189,248,.1);
+      color: #bae6fd;
+      border: 1px solid rgba(56,189,248,.2);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: .85rem;
+    }
+
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      .hero, .card { padding: 18px; }
+      body { padding: 18px 12px 40px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Formulário de criação de Sub-Agente</h1>
+      <p>
+        Preencha isso com calma. A ideia é me dar contexto suficiente para eu desenhar um sub-agente útil,
+        com função clara, limites bem definidos e saída prática.
+      </p>
+      <div class="pillbar">
+        <span class="pill">Clareza > complexidade</span>
+        <span class="pill">Função definida</span>
+        <span class="pill">Limites explícitos</span>
+        <span class="pill">Saída acionável</span>
+      </div>
+    </section>
+
+    <form id="agentForm">
+      <section class="card">
+        <h2>1. Identidade</h2>
+        <p>Quem é esse sub-agente e qual é a missão central dele?</p>
+        <div class="grid">
+          <div>
+            <label for="nome">Nome do sub-agente</label>
+            <input id="nome" name="nome" placeholder="Ex.: Finance, Executor, Leads, Conteúdo" />
+          </div>
+          <div>
+            <label for="emoji">Emoji / assinatura visual</label>
+            <input id="emoji" name="emoji" placeholder="Ex.: 💰, 🚀, 🧠, 📈" />
+          </div>
+          <div class="full">
+            <label for="missao">Missão principal <span class="hint">Em uma ou duas frases: qual problema ele resolve?</span></label>
+            <textarea id="missao" name="missao" placeholder="Ex.: Organizar finanças operacionais da LOOP e transformar números soltos em decisões práticas."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>2. Escopo</h2>
+        <p>O que ele faz, o que nunca faz e quando deve entrar.</p>
+        <div class="grid">
+          <div class="full">
+            <label for="faz">O que ele faz</label>
+            <textarea id="faz" name="faz" placeholder="Liste as tarefas que ele pode executar com autonomia."></textarea>
+          </div>
+          <div class="full">
+            <label for="nunca">O que ele nunca deve fazer</label>
+            <textarea id="nunca" name="nunca" placeholder="Ex.: Não enviar mensagens externas, não mexer em produção, não decidir preço final sozinho."></textarea>
+          </div>
+          <div>
+            <label for="delegar">Quando devo delegar pra ele</label>
+            <textarea id="delegar" name="delegar" placeholder="Descreva os gatilhos de delegação."></textarea>
+          </div>
+          <div>
+            <label for="naoDelegar">Quando NÃO devo delegar</label>
+            <textarea id="naoDelegar" name="naoDelegar" placeholder="Ex.: conversa casual, tema sensível, estratégia final do negócio."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>3. Operação</h2>
+        <p>Como ele trabalha e o que precisa para entregar valor.</p>
+        <div class="grid">
+          <div>
+            <label for="saida">Qual resultado ele deve entregar</label>
+            <textarea id="saida" name="saida" placeholder="Ex.: resumo executivo, plano de ação, relatório, nota estruturada, checklist."></textarea>
+          </div>
+          <div>
+            <label for="workspace">Workspace / pasta</label>
+            <input id="workspace" name="workspace" placeholder="Ex.: ~/.openclaw/workspace-finance" />
+          </div>
+          <div>
+            <label for="ferramentas">Ferramentas que ele pode usar</label>
+            <textarea id="ferramentas" name="ferramentas" placeholder="Ex.: read, write, exec, n8n, Supabase, calendar, browser, etc."></textarea>
+          </div>
+          <div>
+            <label for="risco">Riscos e cuidados especiais</label>
+            <textarea id="risco" name="risco" placeholder="Ex.: nunca expor credencial, pedir confirmação antes de deletar, não agir em produção sem backup."></textarea>
+          </div>
+          <div class="full">
+            <label for="exemplo">Exemplo de tarefa real</label>
+            <textarea id="exemplo" name="exemplo" placeholder="Ex.: 'Analise os custos mensais da LOOP, organize por categoria e me diga onde cortar primeiro.'"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>4. Estilo e comportamento</h2>
+        <p>Como você quer que ele fale, pense e se comporte.</p>
+        <div class="grid">
+          <div>
+            <label for="tom">Tom de voz</label>
+            <select id="tom" name="tom">
+              <option value="">Selecione...</option>
+              <option>Direto e executivo</option>
+              <option>Didático e claro</option>
+              <option>Analítico e estratégico</option>
+              <option>Calmo e acolhedor</option>
+              <option>Provocador com respeito</option>
+            </select>
+          </div>
+          <div>
+            <label for="autonomia">Nível de autonomia</label>
+            <select id="autonomia" name="autonomia">
+              <option value="">Selecione...</option>
+              <option>Baixo — sempre confirma</option>
+              <option>Médio — executa o reversível e reporta</option>
+              <option>Alto — executa o que tiver alta confiança</option>
+            </select>
+          </div>
+          <div class="full">
+            <label for="observacoes">Observações extras</label>
+            <textarea id="observacoes" name="observacoes" placeholder="Tudo que ajudar a deixar esse sub-agente mais redondo."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>5. Exportar briefing</h2>
+        <p>Quando terminar, clique para gerar um briefing limpo que você pode me mandar direto.</p>
+        <div class="actions">
+          <button type="button" class="primary" id="gerarBtn">Gerar briefing</button>
+          <button type="reset" class="secondary">Limpar formulário</button>
+          <button type="button" class="secondary" id="copiarBtn">Copiar briefing</button>
+        </div>
+        <div class="output" id="saidaFormatada">Seu briefing vai aparecer aqui.</div>
+      </section>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('agentForm');
+    const output = document.getElementById('saidaFormatada');
+    const gerarBtn = document.getElementById('gerarBtn');
+    const copiarBtn = document.getElementById('copiarBtn');
+
+    function value(id) {
+      return document.getElementById(id).value.trim() || 'Não informado';
+    }
+
+    function buildBriefing() {
+      return `BRIEFING DE SUB-AGENTE
+
+1. Nome do sub-agente
+${value('nome')} ${value('emoji') !== 'Não informado' ? value('emoji') : ''}
+
+2. Missão principal
+${value('missao')}
+
+3. O que ele faz
+${value('faz')}
+
+4. O que ele nunca deve fazer
+${value('nunca')}
+
+5. Quando devo delegar pra ele
+${value('delegar')}
+
+6. Quando NÃO devo delegar
+${value('naoDelegar')}
+
+7. Resultado que ele deve entregar
+${value('saida')}
+
+8. Workspace / pasta
+${value('workspace')}
+
+9. Ferramentas que ele pode usar
+${value('ferramentas')}
+
+10. Riscos e cuidados especiais
+${value('risco')}
+
+11. Exemplo de tarefa real
+${value('exemplo')}
+
+12. Tom de voz
+${value('tom')}
+
+13. Nível de autonomia
+${value('autonomia')}
+
+14. Observações extras
+${value('observacoes')}`;
+    }
+
+    gerarBtn.addEventListener('click', () => {
+      output.textContent = buildBriefing();
+    });
+
+    copiarBtn.addEventListener('click', async () => {
+      const text = output.textContent.trim();
+      if (!text || text === 'Seu briefing vai aparecer aqui.') {
+        output.textContent = 'Gera o briefing primeiro.';
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(text);
+        copiarBtn.textContent = 'Copiado!';
+        setTimeout(() => copiarBtn.textContent = 'Copiar briefing', 1800);
+      } catch {
+        output.textContent += '\n\n[Não consegui copiar automaticamente. Copie manualmente.]';
+      }
+    });
+
+    form.addEventListener('reset', () => {
+      setTimeout(() => {
+        output.textContent = 'Seu briefing vai aparecer aqui.';
+      }, 0);
+    });
+  </script>
+</body>
+</html>
