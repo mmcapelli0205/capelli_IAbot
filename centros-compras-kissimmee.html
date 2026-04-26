@@ -3,62 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Centros de Compras | International Drive → Kissimmee</title>
+  <title>Guia Premium de Compras | International Drive → Kissimmee</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --panel: #121a31;
-      --panel-2: #1a2545;
-      --text: #eef3ff;
-      --muted: #b9c3e2;
-      --line: rgba(255,255,255,.08);
-      --accent: #4da3ff;
-      --accent-2: #7ce2c3;
-      --warn: #ffcf66;
-      --good: #8ef0a7;
-      --danger: #ff8f8f;
-      --shadow: 0 18px 45px rgba(0,0,0,.28);
-      --radius: 18px;
+      --bg: #07111f;
+      --bg-2: #0b1730;
+      --panel: rgba(12, 20, 42, 0.72);
+      --panel-strong: rgba(14, 24, 49, 0.9);
+      --line: rgba(255,255,255,.10);
+      --text: #eef4ff;
+      --muted: #b7c4e6;
+      --accent: #6ec1ff;
+      --accent-2: #8ef0cf;
+      --accent-3: #ffd56f;
+      --danger: #ff9696;
+      --shadow: 0 24px 70px rgba(0,0,0,.34);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
     }
 
     * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: linear-gradient(180deg, #09101d 0%, #10162a 100%);
       color: var(--text);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(110,193,255,.16), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(142,240,207,.11), transparent 24%),
+        radial-gradient(circle at 50% 100%, rgba(255,213,111,.08), transparent 26%),
+        linear-gradient(180deg, #06101d 0%, #091425 45%, #0d1931 100%);
+      min-height: 100vh;
+    }
+
+    .mesh {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,.45), transparent 80%);
+      pointer-events: none;
     }
 
     .wrap {
-      max-width: 1250px;
+      position: relative;
+      z-index: 1;
+      max-width: 1320px;
       margin: 0 auto;
       padding: 24px;
     }
 
     .hero {
-      background: radial-gradient(circle at top right, rgba(77,163,255,.22), transparent 30%),
-                  linear-gradient(135deg, #11193a, #0f1630 60%, #16234a);
+      overflow: hidden;
+      position: relative;
       border: 1px solid var(--line);
-      border-radius: 26px;
-      padding: 28px;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at top right, rgba(110,193,255,.23), transparent 24%),
+        radial-gradient(circle at left bottom, rgba(142,240,207,.12), transparent 22%),
+        linear-gradient(135deg, rgba(15,27,54,.96), rgba(10,18,38,.94) 55%, rgba(20,34,68,.96));
       box-shadow: var(--shadow);
+      padding: 34px;
       margin-bottom: 22px;
     }
 
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: auto -10% -30% auto;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(110,193,255,.18), transparent 60%);
+      filter: blur(24px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.10);
+      color: #dbe9ff;
+      font-size: .9rem;
+      margin-bottom: 16px;
+    }
+
     h1 {
-      margin: 0 0 10px;
-      font-size: clamp(1.8rem, 3vw, 3rem);
-      line-height: 1.05;
+      margin: 0;
+      font-size: clamp(2.2rem, 4vw, 4.2rem);
+      line-height: .98;
+      letter-spacing: -.03em;
+      max-width: 860px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #ffffff 0%, #cfe6ff 35%, #8ef0cf 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .subtitle {
+      max-width: 840px;
       color: var(--muted);
-      max-width: 900px;
-      line-height: 1.55;
-      margin-bottom: 18px;
+      line-height: 1.65;
+      margin: 16px 0 22px;
+      font-size: 1.02rem;
     }
 
-    .chips, .brand-row {
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .8fr;
+      gap: 18px;
+      align-items: end;
+    }
+
+    .chips, .brand-row, .store-row, .cta-row {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -71,6 +139,44 @@
       padding: 10px 14px;
       font-size: .92rem;
       color: #fff;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-side {
+      border-radius: 26px;
+      padding: 18px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-side h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+
+    .mini-route {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .mini-stop {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .mini-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(110,193,255,.24), rgba(142,240,207,.24));
+      border: 1px solid rgba(255,255,255,.1);
+      font-weight: 800;
     }
 
     .controls {
@@ -83,12 +189,13 @@
     .panel {
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
-      padding: 16px;
+      padding: 18px;
+      backdrop-filter: blur(16px);
     }
 
-    .panel h3, .panel h2 {
+    .panel h2, .panel h3 {
       margin-top: 0;
     }
 
@@ -101,13 +208,18 @@
 
     input, select {
       width: 100%;
-      background: #0d1428;
+      background: rgba(5,10,22,.75);
       color: white;
       border: 1px solid rgba(255,255,255,.12);
-      border-radius: 12px;
-      padding: 12px 14px;
-      font-size: .95rem;
+      border-radius: 14px;
+      padding: 13px 14px;
+      font-size: .96rem;
       outline: none;
+    }
+
+    input:focus, select:focus {
+      border-color: rgba(110,193,255,.6);
+      box-shadow: 0 0 0 3px rgba(110,193,255,.13);
     }
 
     .summary {
@@ -118,134 +230,193 @@
     }
 
     .stat {
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
       border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px;
+      border-radius: 22px;
+      padding: 18px;
+      min-height: 110px;
+    }
+
+    .stat::after {
+      content: '';
+      position: absolute;
+      inset: auto -20px -20px auto;
+      width: 90px;
+      height: 90px;
+      background: radial-gradient(circle, rgba(110,193,255,.14), transparent 65%);
     }
 
     .stat .k {
-      font-size: 1.8rem;
-      font-weight: 800;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 6px;
     }
 
     .stat .t {
       color: var(--muted);
-      font-size: .9rem;
+      font-size: .92rem;
     }
 
     .layout {
       display: grid;
-      grid-template-columns: 1.25fr .95fr;
+      grid-template-columns: 1.28fr .92fr;
       gap: 18px;
       align-items: start;
     }
 
     .cards {
       display: grid;
-      gap: 14px;
+      gap: 16px;
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 18px;
-      transition: transform .18s ease, border-color .18s ease;
+      border-radius: 26px;
+      padding: 20px;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+      box-shadow: 0 18px 40px rgba(0,0,0,.18);
     }
 
     .card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(77,163,255,.45);
+      transform: translateY(-3px);
+      border-color: rgba(110,193,255,.38);
+      box-shadow: 0 24px 50px rgba(0,0,0,.24);
     }
 
-    .card-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(110,193,255,.13), transparent 64%);
+    }
+
+    .card-top {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
       align-items: start;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
 
     .card h3 {
-      margin: 0;
-      font-size: 1.15rem;
+      margin: 0 0 5px;
+      font-size: 1.24rem;
+    }
+
+    .type {
+      color: var(--muted);
+      font-size: .88rem;
     }
 
     .badge {
       white-space: nowrap;
-      background: rgba(124,226,195,.14);
+      background: rgba(142,240,207,.14);
       color: var(--accent-2);
-      border: 1px solid rgba(124,226,195,.25);
+      border: 1px solid rgba(142,240,207,.24);
       border-radius: 999px;
-      padding: 7px 10px;
+      padding: 8px 12px;
       font-size: .82rem;
-      font-weight: 700;
+      font-weight: 800;
+    }
+
+    .scorebar {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      overflow: hidden;
+      margin: 12px 0 10px;
+    }
+
+    .scorebar > div {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
     }
 
     .meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 9px;
       margin: 12px 0;
     }
 
     .meta span {
       background: rgba(255,255,255,.06);
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-size: .85rem;
-      color: var(--muted);
       border: 1px solid rgba(255,255,255,.06);
-    }
-
-    .stores {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .store {
-      background: rgba(77,163,255,.12);
-      color: #dcecff;
-      border: 1px solid rgba(77,163,255,.26);
+      color: var(--muted);
       border-radius: 999px;
       padding: 7px 10px;
       font-size: .85rem;
     }
 
+    .store {
+      background: rgba(110,193,255,.11);
+      color: #dcecff;
+      border: 1px solid rgba(110,193,255,.24);
+      border-radius: 999px;
+      padding: 8px 11px;
+      font-size: .85rem;
+    }
+
     .store.missing {
-      background: rgba(255,143,143,.09);
-      color: #ffd3d3;
-      border-color: rgba(255,143,143,.22);
+      background: rgba(255,150,150,.08);
+      color: #ffd7d7;
+      border-color: rgba(255,150,150,.2);
     }
 
     .desc {
       color: var(--muted);
-      line-height: 1.55;
-      margin-top: 10px;
+      line-height: 1.65;
+      margin: 12px 0 10px;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .btn, .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 15px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+
+    .btn:hover, .btn-secondary:hover { transform: translateY(-1px); }
+
+    .btn {
+      background: linear-gradient(135deg, var(--accent), #9fd7ff);
+      color: #06111f;
+      box-shadow: 0 8px 24px rgba(110,193,255,.22);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.06);
+      color: #eff5ff;
+      border: 1px solid rgba(255,255,255,.09);
     }
 
     .sidebox {
       position: sticky;
-      top: 20px;
+      top: 18px;
       display: grid;
       gap: 16px;
-    }
-
-    .scorebar {
-      height: 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      overflow: hidden;
-      margin: 12px 0 8px;
-    }
-
-    .scorebar > div {
-      height: 100%;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      border-radius: 999px;
     }
 
     .rank-list {
@@ -255,86 +426,128 @@
 
     .rank-item {
       display: grid;
-      grid-template-columns: 34px 1fr auto;
+      grid-template-columns: 40px 1fr auto;
       gap: 10px;
       align-items: center;
-      padding: 10px 0;
+      padding: 12px 0;
       border-bottom: 1px dashed rgba(255,255,255,.08);
     }
 
     .rank-item:last-child { border-bottom: 0; }
 
     .num {
-      width: 34px;
-      height: 34px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: rgba(77,163,255,.14);
-      color: #d7e9ff;
-      font-weight: 800;
+      background: linear-gradient(135deg, rgba(110,193,255,.18), rgba(142,240,207,.18));
+      border: 1px solid rgba(255,255,255,.1);
+      color: #dbe9ff;
+      font-weight: 900;
     }
 
     .tiny {
-      font-size: .84rem;
+      font-size: .85rem;
       color: var(--muted);
+      line-height: 1.45;
     }
 
     .note {
-      color: #d8deef;
-      background: rgba(255,207,102,.08);
-      border: 1px solid rgba(255,207,102,.18);
-      border-radius: 14px;
-      padding: 12px;
-      line-height: 1.5;
-    }
-
-    a.btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 14px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), #75c1ff);
-      color: #06111f;
-      font-weight: 800;
-      text-decoration: none;
+      color: #dce5f8;
+      background: rgba(255,213,111,.08);
+      border: 1px solid rgba(255,213,111,.16);
+      border-radius: 16px;
+      padding: 14px;
+      line-height: 1.6;
     }
 
     .footer {
       margin-top: 18px;
       color: var(--muted);
-      font-size: .85rem;
-      line-height: 1.5;
+      font-size: .9rem;
+      line-height: 1.6;
+      text-align: center;
+      padding-bottom: 10px;
     }
 
-    @media (max-width: 980px) {
-      .controls, .summary, .layout {
+    .open-panel {
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .open-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 900;
+      background: linear-gradient(135deg, #8ef0cf, #6ec1ff);
+      color: #07111f;
+      box-shadow: 0 12px 30px rgba(110,193,255,.22);
+    }
+
+    @media (max-width: 1040px) {
+      .hero-grid, .controls, .summary, .layout {
         grid-template-columns: 1fr;
       }
       .sidebox { position: static; }
     }
+
+    @media (max-width: 640px) {
+      .wrap { padding: 14px; }
+      .hero { padding: 22px; border-radius: 26px; }
+      .panel, .card, .stat { border-radius: 18px; }
+      .card-top { grid-template-columns: 1fr; }
+      .card-actions { flex-direction: column; }
+      .btn, .btn-secondary, .open-link { width: 100%; }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="mesh"></div>
+  <div class="wrap" id="top">
     <section class="hero">
-      <h1>Centros de compras perto de Kissimmee<br>saindo da International Drive</h1>
-      <p class="subtitle">
-        Painel interativo com foco nas marcas que você pediu: <strong>Nike</strong>, <strong>Tommy Hilfiger</strong>, <strong>Adidas</strong> e lojas de material esportivo.
-        A ideia aqui é te ajudar a priorizar o que vale visitar primeiro entre a região da International Drive, Lake Buena Vista e Kissimmee.
-      </p>
-      <div class="chips">
-        <span class="chip">📍 Base: International Drive</span>
-        <span class="chip">🛍️ Foco: outlets + centros de compras</span>
-        <span class="chip">🏃 Prioridade: esporte e marcas premium</span>
-        <span class="chip">🚗 Ordem sugerida por relevância + proximidade</span>
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">🛍️ Guia visual premium • International Drive → Kissimmee</div>
+          <h1>
+            Os melhores <span class="gradient-text">centros de compras</span><br>
+            para caçar Nike, Tommy, Adidas e lojas esportivas
+          </h1>
+          <p class="subtitle">
+            Montei esse painel pra ficar bonito, rápido de usar e útil de verdade. Ele prioriza a rota saindo da <strong>International Drive</strong>
+            em direção a <strong>Kissimmee</strong>, com foco nas marcas que você quer encontrar sem perder tempo.
+          </p>
+          <div class="chips">
+            <span class="chip">📍 Saída: International Drive</span>
+            <span class="chip">🎯 Foco: Nike / Tommy / Adidas</span>
+            <span class="chip">🏃‍♂️ Esportivo + outlet</span>
+            <span class="chip">🚗 Ordem sugerida de visita</span>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <h3>Rota recomendada rápida</h3>
+          <div class="mini-route">
+            <div class="mini-stop"><div class="mini-num">1</div><div><strong>Vineland Premium Outlets</strong><div class="tiny">melhor equilíbrio entre rota + marcas</div></div></div>
+            <div class="mini-stop"><div class="mini-num">2</div><div><strong>International Premium Outlets</strong><div class="tiny">forte demais em variedade</div></div></div>
+            <div class="mini-stop"><div class="mini-num">3</div><div><strong>The Loop Kissimmee</strong><div class="tiny">complemento já mais perto de Kissimmee</div></div></div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <div class="open-panel">
+      <a class="open-link" href="file:///root/.openclaw/workspace/centros-compras-kissimmee.html" target="_blank">🔗 Abrir o HTML no servidor</a>
+    </div>
 
     <section class="controls">
       <div class="panel">
         <label for="search">Buscar centro de compras</label>
-        <input id="search" type="text" placeholder="Ex.: Kissimmee, outlet, Nike..." />
+        <input id="search" type="text" placeholder="Ex.: outlet, Kissimmee, Nike..." />
       </div>
       <div class="panel">
         <label for="region">Região</label>
@@ -377,35 +590,33 @@
 
       <aside class="sidebox">
         <div class="panel">
-          <h2>Melhor rota sugerida</h2>
+          <h2>Top prioridade</h2>
           <div class="rank-list" id="topList"></div>
         </div>
 
         <div class="panel">
-          <h2>Como ler este painel</h2>
+          <h2>Leitura rápida</h2>
           <div class="note">
-            <strong>Score</strong> combina: proximidade da região desejada + presença de Nike/Tommy/Adidas + força em lojas esportivas.
+            <strong>Score</strong> = proximidade da rota + presença de <strong>Nike</strong>, <strong>Tommy</strong>, <strong>Adidas</strong> + força em lojas esportivas.
             <br><br>
-            <strong>Importante:</strong> algumas lojas podem mudar ao longo do tempo. Use este HTML como mapa de decisão e, antes de sair, valide no site oficial do centro ou no Google Maps.
+            <strong>Dica prática:</strong> se você quer resolver quase tudo em um lugar só, começa no <strong>Vineland Premium Outlets</strong>.
           </div>
         </div>
 
         <div class="panel">
-          <h2>Atalho prático</h2>
-          <p class="tiny">Se seu foco principal for marcas esportivas e outlet forte, começa por:</p>
-          <div class="rank-list">
-            <div class="rank-item"><div class="num">1</div><div><strong>Vineland Premium Outlets</strong><div class="tiny">melhor para sua rota indo em direção a Kissimmee</div></div></div>
-            <div class="rank-item"><div class="num">2</div><div><strong>International Premium Outlets</strong><div class="tiny">muito forte em marcas, mas mais para o lado Universal</div></div></div>
-            <div class="rank-item"><div class="num">3</div><div><strong>The Loop Kissimmee</strong><div class="tiny">boa parada já mais perto de Kissimmee</div></div></div>
+          <h2>Links rápidos</h2>
+          <div class="cta-row">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Orlando+Vineland+Premium+Outlets">Abrir Vineland no Maps</a>
+            <a class="btn-secondary" target="_blank" href="https://www.google.com/maps/search/Orlando+International+Premium+Outlets">Abrir International no Maps</a>
+            <a class="btn-secondary" target="_blank" href="https://www.google.com/maps/search/The+Loop+Kissimmee">Abrir The Loop no Maps</a>
           </div>
-          <a class="btn" target="_blank" href="https://www.google.com/maps/search/Orlando+Vineland+Premium+Outlets">Abrir melhor opção no Maps</a>
         </div>
       </aside>
     </section>
 
     <div class="footer">
-      Arquivo pensado para uso rápido no celular ou notebook. Se você quiser, no próximo passo eu posso fazer a <strong>versão 2</strong> com
-      <strong>mapa clicável, links diretos de navegação e checklist de compras</strong>.
+      Visual reformulado pra ficar com cara de guia premium. Se quiser, eu ainda posso fazer uma versão com <strong>mapa embutido</strong>,
+      <strong>galeria de logos</strong> e <strong>roteiro por ordem de parada</strong>.
     </div>
   </div>
 
@@ -421,7 +632,8 @@
         score: 98,
         stores: ['Nike Factory Store', 'Tommy Hilfiger', 'adidas', 'Under Armour', 'PUMA', 'Columbia', 'New Balance'],
         highlights: ['melhor encaixe para quem vai seguir sentido Kissimmee', 'outlet forte em marcas esportivas e lifestyle', 'parada mais inteligente para combinar marcas-chave'],
-        description: 'Se a ideia é sair da International Drive e já seguir numa rota prática em direção a Kissimmee, esse tende a ser o centro mais equilibrado. Normalmente é uma das melhores apostas para encontrar Nike, Tommy e Adidas no mesmo lugar, além de outras lojas fortes de esporte e casual.'
+        description: 'Se a ideia é sair da International Drive e já seguir numa rota prática em direção a Kissimmee, esse tende a ser o centro mais equilibrado. Normalmente é uma das melhores apostas para encontrar Nike, Tommy e Adidas no mesmo lugar, além de outras lojas fortes de esporte e casual.',
+        maps: 'https://www.google.com/maps/search/Orlando+Vineland+Premium+Outlets'
       },
       {
         name: 'Orlando International Premium Outlets',
@@ -433,7 +645,8 @@
         score: 95,
         stores: ['Nike Factory Store', 'Tommy Hilfiger', 'adidas', 'Under Armour', 'PUMA', 'Converse', 'Vans'],
         highlights: ['fortíssimo para variedade', 'excelente para roupa, tênis e esportivo', 'menos alinhado com Kissimmee do que Vineland'],
-        description: 'Muito forte em variedade de marcas e geralmente excelente para compras esportivas. Se você ainda estiver mais para o lado da International Drive/Universal, vale muito. Só perde um pouco para o Vineland se o critério for praticidade indo rumo a Kissimmee.'
+        description: 'Muito forte em variedade de marcas e geralmente excelente para compras esportivas. Se você ainda estiver mais para o lado da International Drive/Universal, vale muito. Só perde um pouco para o Vineland se o critério for praticidade indo rumo a Kissimmee.',
+        maps: 'https://www.google.com/maps/search/Orlando+International+Premium+Outlets'
       },
       {
         name: 'The Loop Kissimmee',
@@ -445,7 +658,8 @@
         score: 72,
         stores: ['Academy Sports + Outdoors', 'Ross / TJ Maxx (varia)', 'outras lojas de varejo da região'],
         highlights: ['boa parada já em Kissimmee', 'mais útil para complementar compras', 'melhor para material esportivo geral do que para outlet premium'],
-        description: 'Boa opção quando você já estiver entrando em Kissimmee e quiser complementar compras, especialmente em loja esportiva mais generalista. Não costuma ser a melhor aposta para concentrar Nike, Tommy e Adidas oficiais no mesmo nível dos Premium Outlets.'
+        description: 'Boa opção quando você já estiver entrando em Kissimmee e quiser complementar compras, especialmente em loja esportiva mais generalista. Não costuma ser a melhor aposta para concentrar Nike, Tommy e Adidas oficiais no mesmo nível dos Premium Outlets.',
+        maps: 'https://www.google.com/maps/search/The+Loop+Kissimmee'
       },
       {
         name: 'Lake Buena Vista Factory Stores',
@@ -457,7 +671,8 @@
         score: 67,
         stores: ['Tommy Hilfiger', 'Reebok / esportivas variáveis', 'lojas de desconto e outlet menores'],
         highlights: ['menos lotado em alguns dias', 'bom como plano B', 'não é tão forte quanto Vineland ou International'],
-        description: 'Pode valer como opção secundária, principalmente se você quiser algo menos pesado que os outlets maiores. Mas, sendo direto: para o combo Nike + Tommy + Adidas, ele tende a perder.'
+        description: 'Pode valer como opção secundária, principalmente se você quiser algo menos pesado que os outlets maiores. Mas, sendo direto: para o combo Nike + Tommy + Adidas, ele tende a perder.',
+        maps: 'https://www.google.com/maps/search/Lake+Buena+Vista+Factory+Stores'
       },
       {
         name: 'Orlando Outlet Marketplace',
@@ -469,7 +684,8 @@
         score: 54,
         stores: ['Tommy Hilfiger', 'algumas lojas de outlet menores'],
         highlights: ['parada rápida', 'bem menor que os Premium Outlets', 'útil só se estiver muito no caminho'],
-        description: 'É uma opção mais enxuta. Não é onde eu apostaria para resolver sua busca principal. Serve mais como complemento rápido do que como destino central de compras.'
+        description: 'É uma opção mais enxuta. Não é onde eu apostaria para resolver sua busca principal. Serve mais como complemento rápido do que como destino central de compras.',
+        maps: 'https://www.google.com/maps/search/Orlando+Outlet+Marketplace'
       },
       {
         name: 'Osceola Square Mall / região comercial de Kissimmee',
@@ -481,7 +697,8 @@
         score: 40,
         stores: ['varejo local', 'eventuais esportivas e descontos regionais'],
         highlights: ['mais regional', 'baixo foco em marcas premium desejadas', 'não é prioridade para esse objetivo'],
-        description: 'Para o que você pediu, eu não colocaria como prioridade. Pode até ter comércio útil na região, mas não é a aposta certa para caçar Nike, Tommy e Adidas de forma eficiente.'
+        description: 'Para o que você pediu, eu não colocaria como prioridade. Pode até ter comércio útil na região, mas não é a aposta certa para caçar Nike, Tommy e Adidas de forma eficiente.',
+        maps: 'https://www.google.com/maps/search/Osceola+Square+Mall+Kissimmee'
       }
     ];
 
@@ -491,7 +708,6 @@
     const region = document.getElementById('region');
     const brand = document.getElementById('brand');
     const sort = document.getElementById('sort');
-
     const totalCenters = document.getElementById('totalCenters');
     const nikeCount = document.getElementById('nikeCount');
     const tommyCount = document.getElementById('tommyCount');
@@ -533,6 +749,14 @@
       return clone;
     }
 
+    function labelRegion(region) {
+      return {
+        'international-drive': 'International Drive / Universal',
+        'lake-buena-vista': 'Lake Buena Vista / Disney',
+        'kissimmee': 'Kissimmee'
+      }[region] || region;
+    }
+
     function render() {
       const filtered = sortedData(
         centers.filter(c =>
@@ -557,10 +781,10 @@
 
         return `
           <article class="card">
-            <div class="card-head">
+            <div class="card-top">
               <div>
                 <h3>${center.name}</h3>
-                <div class="tiny">${center.type}</div>
+                <div class="type">${center.type}</div>
               </div>
               <div class="badge">Score ${center.score}/100</div>
             </div>
@@ -569,7 +793,7 @@
 
             <div class="meta">
               <span>📍 ${center.distanceText}</span>
-              <span>🧭 Região: ${labelRegion(center.region)}</span>
+              <span>🧭 ${labelRegion(center.region)}</span>
               <span>🏷️ ${countKeyBrands(center)}/3 marcas-chave</span>
             </div>
 
@@ -577,12 +801,17 @@
               ${keyBrands.map(b => `<span class="store ${b.ok ? '' : 'missing'}">${b.ok ? '✔' : '✖'} ${b.label}</span>`).join('')}
             </div>
 
-            <div class="stores">
+            <div class="store-row" style="margin-top:12px;">
               ${center.stores.map(store => `<span class="store">${store}</span>`).join('')}
             </div>
 
             <p class="desc">${center.description}</p>
             <p class="tiny"><strong>Destaques:</strong> ${center.highlights.join(' • ')}</p>
+
+            <div class="card-actions">
+              <a class="btn" href="${center.maps}" target="_blank">Abrir no Google Maps</a>
+              <a class="btn-secondary" href="#top">Ver topo do guia</a>
+            </div>
           </article>
         `;
       }).join('') || `<div class="panel"><strong>Nada encontrado.</strong><br><span class="tiny">Tenta limpar os filtros ou buscar outro termo.</span></div>`;
@@ -590,7 +819,7 @@
       const top3 = [...filtered].sort((a,b) => b.score - a.score).slice(0,3);
       elTopList.innerHTML = top3.map((item, i) => `
         <div class="rank-item">
-          <div class="num">${i+1}</div>
+          <div class="num">${i + 1}</div>
           <div>
             <strong>${item.name}</strong>
             <div class="tiny">${item.distanceText}</div>
@@ -598,14 +827,6 @@
           <div class="tiny">${item.score}/100</div>
         </div>
       `).join('');
-    }
-
-    function labelRegion(region) {
-      return {
-        'international-drive': 'International Drive / Universal',
-        'lake-buena-vista': 'Lake Buena Vista / Disney',
-        'kissimmee': 'Kissimmee'
-      }[region] || region;
     }
 
     [search, region, brand, sort].forEach(el => el.addEventListener('input', render));
