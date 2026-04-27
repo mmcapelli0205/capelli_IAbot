@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia Completo Orlando | Compras + International Drive</title>
+  <style>
+    :root {
+      --bg: #06101c;
+      --panel: rgba(11, 19, 40, 0.78);
+      --card: rgba(255,255,255,.05);
+      --line: rgba(255,255,255,.10);
+      --text: #edf4ff;
+      --muted: #b6c3e0;
+      --blue: #72c5ff;
+      --mint: #8ff0d1;
+      --gold: #ffd976;
+      --danger: #ff9d9d;
+      --shadow: 0 24px 70px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(114,197,255,.15), transparent 25%),
+        radial-gradient(circle at 90% 15%, rgba(143,240,209,.1), transparent 22%),
+        linear-gradient(180deg, #06101c 0%, #0b1730 100%);
+    }
+
+    .wrap {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(16,28,58,.96), rgba(9,18,38,.96));
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: #dce8ff;
+      font-size: .9rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      line-height: 1;
+      letter-spacing: -.03em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 980px;
+      margin-bottom: 18px;
+    }
+
+    .chips, .filters, .actions, .tags, .store-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip, .tag {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-size: .9rem;
+    }
+
+    .section-title {
+      margin: 26px 0 14px;
+      font-size: 1.45rem;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .filters-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(5,10,20,.78);
+      color: white;
+      font-size: .96rem;
+      outline: none;
+    }
+
+    .btn, .btn-secondary {
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, var(--blue), #9ad9ff);
+      color: #08111c;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.07);
+      color: white;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    .stat {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .stat .k {
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    .stat .t {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.2fr .9fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 16px 40px rgba(0,0,0,.22);
+    }
+
+    .card-top {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: start;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      background: rgba(143,240,209,.13);
+      color: var(--mint);
+      border: 1px solid rgba(143,240,209,.22);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .meta span {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 999px;
+      padding: 7px 10px;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .desc, .tiny {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .guide-card {
+      border-left: 4px solid var(--gold);
+    }
+
+    .sidebox {
+      position: sticky;
+      top: 18px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .rank-item {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px dashed rgba(255,255,255,.08);
+    }
+
+    .rank-item:last-child { border-bottom: 0; }
+
+    .num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(114,197,255,.14);
+      font-weight: 900;
+    }
+
+    .note {
+      background: rgba(255,217,118,.08);
+      border: 1px solid rgba(255,217,118,.16);
+      border-radius: 16px;
+      padding: 14px;
+      line-height: 1.6;
+      color: #dfe7f5;
+    }
+
+    a.link {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 1050px) {
+      .filters-grid, .summary, .layout { grid-template-columns: 1fr; }
+      .sidebox { position: static; }
+    }
+
+    @media (max-width: 680px) {
+      .wrap { padding: 14px; }
+      .hero, .panel, .card, .stat { border-radius: 18px; }
+      .card-top { grid-template-columns: 1fr; }
+      .actions { flex-direction: column; }
+      .btn, .btn-secondary { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" id="top">
+    <section class="hero">
+      <div class="eyebrow">🌴 Orlando completo • compras + passeio + International Drive</div>
+      <h1>Guia completo de Orlando com filtro por bairro e lojas conhecidas</h1>
+      <p class="subtitle">
+        Agora do jeito certo: você escolhe a <strong>região/bairro</strong> e aparecem as <strong>lojas conhecidas</strong> e pontos importantes.
+        Também inclui um mini-guia da <strong>International Drive</strong> com atrações, compras e diversão — incluindo a roda gigante e o fliperama gigante.
+      </p>
+      <div class="chips">
+        <span class="chip">🛍️ Nike, Adidas, Tommy</span>
+        <span class="chip">💸 Ross, Marshalls, TJ Maxx</span>
+        <span class="chip">🏃 lojas esportivas</span>
+        <span class="chip">🎡 The Wheel</span>
+        <span class="chip">🕹️ Dezerland / arcade gigante</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 class="section-title" style="margin-top:0;">Filtrar lojas por bairro / região</h2>
+      <div class="filters-grid">
+        <div>
+          <label for="search">Buscar loja, atração ou região</label>
+          <input id="search" type="text" placeholder="Ex.: Ross, Kissimmee, fliperama, Nike..." />
+        </div>
+        <div>
+          <label for="region">Bairro / região</label>
+          <select id="region">
+            <option value="all">Todas</option>
+            <option value="international-drive">International Drive</option>
+            <option value="lake-buena-vista">Lake Buena Vista</option>
+            <option value="kissimmee">Kissimmee</option>
+            <option value="universal-area">Área Universal / Premium Outlets</option>
+          </select>
+        </div>
+        <div>
+          <label for="kind">Tipo</label>
+          <select id="kind">
+            <option value="all">Todos</option>
+            <option value="store">Lojas</option>
+            <option value="shopping">Centros de compras</option>
+            <option value="attraction">Atrações</option>
+          </select>
+        </div>
+        <div>
+          <label for="brand">Marca / destaque</label>
+          <select id="brand">
+            <option value="all">Todas</option>
+            <option value="nike">Nike</option>
+            <option value="adidas">Adidas</option>
+            <option value="tommy">Tommy</option>
+            <option value="ross">Ross</option>
+            <option value="marshalls">Marshalls</option>
+            <option value="sports">Esportivas</option>
+            <option value="family">Passeio/família</option>
+          </select>
+        </div>
+      </div>
+      <div class="actions" style="margin-top:14px;">
+        <button class="btn" id="applyBtn" type="button">Buscar</button>
+        <button class="btn-secondary" id="clearBtn" type="button">Limpar</button>
+      </div>
+    </section>
+
+    <section class="summary">
+      <div class="stat"><div class="k" id="totalCount">0</div><div class="t">resultados</div></div>
+      <div class="stat"><div class="k" id="storeCount">0</div><div class="t">lojas</div></div>
+      <div class="stat"><div class="k" id="shoppingCount">0</div><div class="t">centros de compras</div></div>
+      <div class="stat"><div class="k" id="attractionCount">0</div><div class="t">atrações</div></div>
+    </section>
+
+    <section class="layout">
+      <div class="grid" id="results"></div>
+
+      <aside class="sidebox">
+        <div class="panel">
+          <h2 style="margin-top:0;">International Drive — o que tem para fazer</h2>
+          <div class="rank-item"><div class="num">1</div><div><strong>The Wheel at ICON Park</strong><div class="tiny">a roda gigante famosa</div></div></div>
+          <div class="rank-item"><div class="num">2</div><div><strong>ICON Park</strong><div class="tiny">restaurantes, atrações e passeio noturno</div></div></div>
+          <div class="rank-item"><div class="num">3</div><div><strong>Dezerland Park</strong><div class="tiny">arcade/fliperama gigante + carros + entretenimento</div></div></div>
+          <div class="rank-item"><div class="num">4</div><div><strong>Orlando International Premium Outlets</strong><div class="tiny">compras fortes perto da região</div></div></div>
+          <div class="rank-item"><div class="num">5</div><div><strong>WonderWorks / Ripley’s</strong><div class="tiny">passeio turístico clássico da I-Drive</div></div></div>
+        </div>
+
+        <div class="panel">
+          <h2 style="margin-top:0;">Leitura rápida</h2>
+          <div class="note">
+            <strong>Se o foco for compra premium:</strong> Vineland + International Premium Outlets.
+            <br><br>
+            <strong>Se o foco for garimpo:</strong> Kissimmee e regiões com Ross / Marshalls / TJ Maxx.
+            <br><br>
+            <strong>Se o foco for passeio na International Drive:</strong> ICON Park, roda gigante e Dezerland resolvem bem.
+          </div>
+        </div>
+      </aside>
+    </section>
+  </div>
+
+  <script>
+    const items = [
+      {
+        name: 'Nike Clearance Store - Kissimmee',
+        region: 'kissimmee',
+        kind: 'store',
+        tags: ['nike', 'sports'],
+        areaLabel: 'Kissimmee',
+        address: '2671 Osceola Pkwy, Kissimmee, FL',
+        phone: '+1 407-396-0500',
+        description: 'Loja real importante para quem quer Nike perto de Kissimmee. Boa para ponta de estoque e oportunidades.',
+        maps: 'https://www.google.com/maps/search/Nike+Clearance+Store+Kissimmee+2671+Osceola+Pkwy'
+      },
+      {
+        name: 'Ross Dress for Less - Kissimmee',
+        region: 'kissimmee',
+        kind: 'store',
+        tags: ['ross'],
+        areaLabel: 'Kissimmee',
+        address: 'Região de Kissimmee / Osceola',
+        phone: 'Verificar unidade específica',
+        description: 'Boa para garimpo de roupas, tênis e itens de marca com desconto.',
+        maps: 'https://www.google.com/maps/search/Ross+Dress+for+Less+Kissimmee+FL'
+      },
+      {
+        name: 'Marshalls - Kissimmee',
+        region: 'kissimmee',
+        kind: 'store',
+        tags: ['marshalls'],
+        areaLabel: 'Kissimmee',
+        address: 'Região de Kissimmee',
+        phone: 'Verificar unidade específica',
+        description: 'Boa pedida para garimpo de roupas, malas, casa e marcas conhecidas.',
+        maps: 'https://www.google.com/maps/search/Marshalls+Kissimmee+FL'
+      },
+      {
+        name: 'The Loop Kissimmee',
+        region: 'kissimmee',
+        kind: 'shopping',
+        tags: ['ross', 'marshalls', 'sports', 'family'],
+        areaLabel: 'Kissimmee',
+        address: 'The Loop, Kissimmee, FL',
+        phone: 'Centro comercial',
+        description: 'Centro útil para combinar lojas de desconto, esportivo e alimentação.',
+        maps: 'https://www.google.com/maps/search/The+Loop+Kissimmee'
+      },
+      {
+        name: 'Orlando Vineland Premium Outlets',
+        region: 'lake-buena-vista',
+        kind: 'shopping',
+        tags: ['nike', 'adidas', 'tommy', 'sports'],
+        areaLabel: 'Lake Buena Vista',
+        address: '8200 Vineland Ave, Orlando, FL',
+        phone: 'Premium Outlets',
+        description: 'Melhor combinação para compras de marca indo em direção a Kissimmee.',
+        maps: 'https://www.google.com/maps/search/Orlando+Vineland+Premium+Outlets'
+      },
+      {
+        name: 'Tommy Hilfiger - Vineland',
+        region: 'lake-buena-vista',
+        kind: 'store',
+        tags: ['tommy'],
+        areaLabel: 'Lake Buena Vista',
+        address: 'Dentro do Vineland Premium Outlets',
+        phone: 'Verificar loja',
+        description: 'Loja da Tommy dentro do outlet mais forte da rota para Kissimmee.',
+        maps: 'https://www.google.com/maps/search/Tommy+Hilfiger+Vineland+Premium+Outlets'
+      },
+      {
+        name: 'adidas - Vineland',
+        region: 'lake-buena-vista',
+        kind: 'store',
+        tags: ['adidas', 'sports'],
+        areaLabel: 'Lake Buena Vista',
+        address: 'Dentro do Vineland Premium Outlets',
+        phone: 'Verificar loja',
+        description: 'Boa opção de Adidas no corredor de outlets.',
+        maps: 'https://www.google.com/maps/search/adidas+Vineland+Premium+Outlets'
+      },
+      {
+        name: 'Nike Factory Store - Vineland',
+        region: 'lake-buena-vista',
+        kind: 'store',
+        tags: ['nike', 'sports'],
+        areaLabel: 'Lake Buena Vista',
+        address: 'Dentro do Vineland Premium Outlets',
+        phone: 'Verificar loja',
+        description: 'Uma das lojas mais procuradas da região.',
+        maps: 'https://www.google.com/maps/search/Nike+Factory+Store+Vineland+Premium+Outlets'
+      },
+      {
+        name: 'Orlando International Premium Outlets',
+        region: 'universal-area',
+        kind: 'shopping',
+        tags: ['nike', 'adidas', 'tommy', 'sports'],
+        areaLabel: 'Área Universal / I-Drive',
+        address: '4951 International Dr, Orlando, FL',
+        phone: 'Premium Outlets',
+        description: 'Outlet muito forte perto da International Drive, excelente para marcas esportivas.',
+        maps: 'https://www.google.com/maps/search/Orlando+International+Premium+Outlets'
+      },
+      {
+        name: 'Nike Factory Store - International Premium Outlets',
+        region: 'universal-area',
+        kind: 'store',
+        tags: ['nike', 'sports'],
+        areaLabel: 'Área Universal / I-Drive',
+        address: 'Dentro do Orlando International Premium Outlets',
+        phone: 'Verificar loja',
+        description: 'Loja importante para tênis e roupas esportivas.',
+        maps: 'https://www.google.com/maps/search/Nike+Factory+Store+Orlando+International+Premium+Outlets'
+      },
+      {
+        name: 'Tommy Hilfiger - International Premium Outlets',
+        region: 'universal-area',
+        kind: 'store',
+        tags: ['tommy'],
+        areaLabel: 'Área Universal / I-Drive',
+        address: 'Dentro do Orlando International Premium Outlets',
+        phone: 'Verificar loja',
+        description: 'Tommy em uma das regiões mais fortes de compras.',
+        maps: 'https://www.google.com/maps/search/Tommy+Hilfiger+Orlando+International+Premium+Outlets'
+      },
+      {
+        name: 'adidas - International Premium Outlets',
+        region: 'universal-area',
+        kind: 'store',
+        tags: ['adidas', 'sports'],
+        areaLabel: 'Área Universal / I-Drive',
+        address: 'Dentro do Orlando International Premium Outlets',
+        phone: 'Verificar loja',
+        description: 'Adidas forte na área de outlet principal.',
+        maps: 'https://www.google.com/maps/search/adidas+Orlando+International+Premium+Outlets'
+      },
+      {
+        name: 'ICON Park',
+        region: 'international-drive',
+        kind: 'attraction',
+        tags: ['family'],
+        areaLabel: 'International Drive',
+        address: '8375 International Dr, Orlando, FL',
+        phone: 'Complexo turístico',
+        description: 'Centro turístico com restaurantes, bares, atrações e passeio noturno.',
+        maps: 'https://www.google.com/maps/search/ICON+Park+Orlando'
+      },
+      {
+        name: 'The Wheel at ICON Park',
+        region: 'international-drive',
+        kind: 'attraction',
+        tags: ['family'],
+        areaLabel: 'International Drive',
+        address: 'Dentro do ICON Park',
+        phone: 'Atração',
+        description: 'A roda gigante famosa da International Drive.',
+        maps: 'https://www.google.com/maps/search/The+Wheel+at+ICON+Park'
+      },
+      {
+        name: 'Dezerland Park Orlando',
+        region: 'international-drive',
+        kind: 'attraction',
+        tags: ['family'],
+        areaLabel: 'International Drive',
+        address: '5250 International Dr, Orlando, FL',
+        phone: 'Parque indoor',
+        description: 'Aqui entra o fliperama/arcade gigante que você citou. Tem kart, jogos, carros e muita coisa indoor.',
+        maps: 'https://www.google.com/maps/search/Dezerland+Park+Orlando'
+      },
+      {
+        name: 'WonderWorks Orlando',
+        region: 'international-drive',
+        kind: 'attraction',
+        tags: ['family'],
+        areaLabel: 'International Drive',
+        address: '9067 International Dr, Orlando, FL',
+        phone: 'Atração',
+        description: 'Aquela casa invertida clássica da I-Drive, boa para passeio.',
+        maps: 'https://www.google.com/maps/search/WonderWorks+Orlando'
+      },
+      {
+        name: 'Ripley’s Believe It or Not! Orlando',
+        region: 'international-drive',
+        kind: 'attraction',
+        tags: ['family'],
+        areaLabel: 'International Drive',
+        address: '8201 International Dr, Orlando, FL',
+        phone: 'Atração',
+        description: 'Passeio clássico na International Drive.',
+        maps: 'https://www.google.com/maps/search/Ripleys+Believe+It+or+Not+Orlando'
+      },
+      {
+        name: 'Orlando Outlet Marketplace',
+        region: 'international-drive',
+        kind: 'shopping',
+        tags: ['tommy'],
+        areaLabel: 'International Drive',
+        address: '5269 International Dr, Orlando, FL',
+        phone: 'Centro de compras',
+        description: 'Centro menor na região da I-Drive, útil como parada complementar.',
+        maps: 'https://www.google.com/maps/search/Orlando+Outlet+Marketplace'
+      },
+      {
+        name: 'Ross Dress for Less - International Drive area',
+        region: 'international-drive',
+        kind: 'store',
+        tags: ['ross'],
+        areaLabel: 'International Drive',
+        address: 'Região da International Drive',
+        phone: 'Verificar unidade específica',
+        description: 'Boa opção de garimpo perto do corredor turístico.',
+        maps: 'https://www.google.com/maps/search/Ross+Dress+for+Less+International+Drive+Orlando'
+      },
+      {
+        name: 'Marshalls - International Drive area',
+        region: 'international-drive',
+        kind: 'store',
+        tags: ['marshalls'],
+        areaLabel: 'International Drive',
+        address: 'Região da International Drive',
+        phone: 'Verificar unidade específica',
+        description: 'Boa opção para preço e garimpo na região turística.',
+        maps: 'https://www.google.com/maps/search/Marshalls+International+Drive+Orlando'
+      }
+    ];
+
+    const results = document.getElementById('results');
+    const search = document.getElementById('search');
+    const region = document.getElementById('region');
+    const kind = document.getElementById('kind');
+    const brand = document.getElementById('brand');
+    const applyBtn = document.getElementById('applyBtn');
+    const clearBtn = document.getElementById('clearBtn');
+
+    const totalCount = document.getElementById('totalCount');
+    const storeCount = document.getElementById('storeCount');
+    const shoppingCount = document.getElementById('shoppingCount');
+    const attractionCount = document.getElementById('attractionCount');
+
+    function matchRegion(item, v) {
+      return v === 'all' || item.region === v;
+    }
+
+    function matchKind(item, v) {
+      return v === 'all' || item.kind === v;
+    }
+
+    function matchBrand(item, v) {
+      return v === 'all' || item.tags.includes(v);
+    }
+
+    function matchSearch(item, q) {
+      if (!q) return true;
+      const hay = [item.name, item.areaLabel, item.address, item.phone, item.description, item.kind, ...item.tags].join(' ').toLowerCase();
+      return hay.includes(q.toLowerCase());
+    }
+
+    function labelKind(kind) {
+      return { store: 'Loja', shopping: 'Centro de compras', attraction: 'Atração' }[kind] || kind;
+    }
+
+    function render() {
+      const filtered = items.filter(item =>
+        matchRegion(item, region.value) &&
+        matchKind(item, kind.value) &&
+        matchBrand(item, brand.value) &&
+        matchSearch(item, search.value.trim())
+      );
+
+      totalCount.textContent = filtered.length;
+      storeCount.textContent = filtered.filter(i => i.kind === 'store').length;
+      shoppingCount.textContent = filtered.filter(i => i.kind === 'shopping').length;
+      attractionCount.textContent = filtered.filter(i => i.kind === 'attraction').length;
+
+      results.innerHTML = filtered.map(item => `
+        <article class="card ${item.kind === 'attraction' ? 'guide-card' : ''}">
+          <div class="card-top">
+            <div>
+              <h3 style="margin:0 0 6px;">${item.name}</h3>
+              <div class="tiny">${item.areaLabel}</div>
+            </div>
+            <div class="badge">${labelKind(item.kind)}</div>
+          </div>
+
+          <div class="meta">
+            <span>📍 ${item.address}</span>
+            <span>📞 ${item.phone}</span>
+          </div>
+
+          <div class="tags">
+            ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+          </div>
+
+          <p class="desc">${item.description}</p>
+
+          <div class="actions" style="margin-top:14px;">
+            <a class="btn" href="${item.maps}" target="_blank">Abrir no Maps</a>
+            <a class="btn-secondary" href="#top">Voltar ao topo</a>
+          </div>
+        </article>
+      `).join('') || `<div class="card"><strong>Nenhum resultado encontrado.</strong><p class="tiny">Tenta outro bairro, outra marca ou limpa os filtros.</p></div>`;
+    }
+
+    function clearFilters() {
+      search.value = '';
+      region.value = 'all';
+      kind.value = 'all';
+      brand.value = 'all';
+      render();
+    }
+
+    applyBtn.addEventListener('click', render);
+    clearBtn.addEventListener('click', clearFilters);
+    search.addEventListener('keydown', e => { if (e.key === 'Enter') render(); });
+    [region, kind, brand].forEach(el => el.addEventListener('change', render));
+
+    render();
+  </script>
+</body>
+</html>
